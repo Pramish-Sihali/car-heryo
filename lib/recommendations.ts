@@ -3,9 +3,11 @@ import { mockEVCars } from './mock-data';
 
 export interface ScoredCar {
   car: EVCar;
-  score: number;
+  score?: number;
   matchPercentage: number;
   reason: string;
+  strengths?: string[];
+  considerations?: string;
 }
 
 export const getRecommendations = (prefs: UserPreferences): ScoredCar[] => {

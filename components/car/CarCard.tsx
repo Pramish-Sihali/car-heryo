@@ -23,18 +23,13 @@ export function CarCard({ car }: CarCardProps) {
     >
       <Card className="overflow-hidden">
         <CardHeader className="p-0">
-          <div className="relative h-48 w-full overflow-hidden">
-            <motion.div
-              whileHover={{ scale: 1.1 }}
-              transition={{ duration: 0.4 }}
-            >
-              {/* <Image
-                src={car.image}
-                alt={car.name}
-                fill
-                className="object-cover"
-              /> */}
-            </motion.div>
+          <div className="relative h-48 w-full overflow-hidden bg-muted">
+            <Image
+              src={car.image}
+              alt={car.name}
+              fill
+              className="object-cover transition-transform duration-300 hover:scale-105"
+            />
             <motion.div
               initial={{ x: 50, opacity: 0 }}
               animate={{ x: 0, opacity: 1 }}

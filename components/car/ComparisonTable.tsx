@@ -91,14 +91,14 @@ export function ComparisonTable({ car1, car2 }: ComparisonTableProps) {
             animate={{ opacity: 1, x: 0 }}
             className="relative h-64 rounded-lg overflow-hidden"
           >
-            {/* <Image src={car1.image} alt={car1.name} fill className="object-cover" /> */}
+            <Image src={car1.image} alt={car1.name} fill className="object-cover" />
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             className="relative h-64 rounded-lg overflow-hidden"
           >
-            {/* <Image src={car2.image} alt={car2.name} fill className="object-cover" /> */}
+            <Image src={car2.image} alt={car2.name} fill className="object-cover" />
           </motion.div>
         </div>
 

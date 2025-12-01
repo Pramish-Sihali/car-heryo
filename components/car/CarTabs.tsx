@@ -20,7 +20,7 @@ export function CarTabs({ car }: CarTabsProps) {
       </TabsList>
 
       <AnimatePresence mode="wait">
-        <TabsContent value="overview" className="mt-6">
+        <TabsContent key="overview" value="overview" className="mt-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ export function CarTabs({ car }: CarTabsProps) {
           </motion.div>
         </TabsContent>
 
-        <TabsContent value="specs" className="mt-6">
+        <TabsContent key="specs" value="specs" className="mt-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -169,7 +169,7 @@ export function CarTabs({ car }: CarTabsProps) {
           </motion.div>
         </TabsContent>
 
-        <TabsContent value="features" className="mt-6">
+        <TabsContent key="features" value="features" className="mt-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

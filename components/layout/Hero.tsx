@@ -1,30 +1,43 @@
 'use client';
 
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
-const particles = Array.from({ length: 5 });
+const particlePositions = [
+  { x: 15, y: 20 },
+  { x: 85, y: 15 },
+  { x: 25, y: 75 },
+  { x: 70, y: 80 },
+  { x: 50, y: 40 },
+];
 
 export function Hero() {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-gradient-to-br from-orange-500 via-orange-600 to-blue-900 py-24 sm:py-32">
       {/* Floating Particles */}
-      {particles.map((_, i) => (
+      {mounted && particlePositions.map((pos, i) => (
         <motion.div
           key={i}
           className="absolute h-2 w-2 rounded-full bg-white/30"
           initial={{
-            x: Math.random() * 100 + '%',
-            y: Math.random() * 100 + '%',
+            x: pos.x + '%',
+            y: pos.y + '%',
           }}
           animate={{
             y: [0, -30, 0],
             opacity: [0.3, 0.8, 0.3],
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: 3 + i * 0.4,
             repeat: Infinity,
             ease: 'easeInOut',
             delay: i * 0.3,

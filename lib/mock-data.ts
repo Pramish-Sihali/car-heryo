@@ -8,7 +8,7 @@ export const mockEVCars: EVCar[] = [
     model: 'Model 3',
     year: 2024,
     price: 45000,
-    image: ' ',
+    image: '/assets/car-1.jpg',
     category: 'Sedan',
     specs: {
       range: 510,
@@ -38,7 +38,7 @@ export const mockEVCars: EVCar[] = [
     model: 'Atto 3',
     year: 2024,
     price: 35000,
-    image: '',
+    image: '/assets/car-2.jpg',
     category: 'SUV',
     specs: {
       range: 420,
@@ -68,7 +68,7 @@ export const mockEVCars: EVCar[] = [
     model: 'Leaf',
     year: 2024,
     price: 28000,
-    image: '',
+    image: '/assets/car-1.jpg',
     category: 'Hatchback',
     specs: {
       range: 385,
@@ -98,7 +98,7 @@ export const mockEVCars: EVCar[] = [
     model: 'Ioniq 5',
     year: 2024,
     price: 43000,
-    image: '',
+    image: '/assets/car-2.jpg',
     category: 'Crossover',
     specs: {
       range: 481,
@@ -128,7 +128,7 @@ export const mockEVCars: EVCar[] = [
     model: 'ID.4',
     year: 2024,
     price: 41000,
-    image: '',
+    image: '/assets/car-1.jpg',
     category: 'SUV',
     specs: {
       range: 443,
@@ -158,7 +158,7 @@ export const mockEVCars: EVCar[] = [
     model: 'EV6',
     year: 2024,
     price: 48000,
-    image: '',
+    image: '/assets/car-2.jpg',
     category: 'Crossover',
     specs: {
       range: 528,
@@ -188,7 +188,7 @@ export const mockEVCars: EVCar[] = [
     model: '2',
     year: 2024,
     price: 50000,
-    image: '',
+    image: '/assets/car-1.jpg',
     category: 'Sedan',
     specs: {
       range: 470,
@@ -218,7 +218,7 @@ export const mockEVCars: EVCar[] = [
     model: 'ZS EV',
     year: 2024,
     price: 32000,
-    image: '',
+    image: '/assets/car-2.jpg',
     category: 'SUV',
     specs: {
       range: 440,
@@ -248,7 +248,7 @@ export const mockEVCars: EVCar[] = [
     model: 'iX',
     year: 2024,
     price: 85000,
-    image: '',
+    image: '/assets/car-1.jpg',
     category: 'SUV',
     specs: {
       range: 630,
@@ -278,7 +278,7 @@ export const mockEVCars: EVCar[] = [
     model: 'Bolt EUV',
     year: 2024,
     price: 29000,
-    image: '',
+    image: '/assets/car-2.jpg',
     category: 'Crossover',
     specs: {
       range: 402,

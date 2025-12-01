@@ -22,13 +22,13 @@ export function CarDetailHero({ car }: CarDetailHeroProps) {
   return (
     <div ref={ref} className="relative h-[600px] overflow-hidden">
       <motion.div style={{ y }} className="absolute inset-0">
-        {/* <Image
+        <Image
           src={car.image}
           alt={car.name}
           fill
           className="object-cover"
           priority
-        /> */}
+        />
         <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
       </motion.div>
 

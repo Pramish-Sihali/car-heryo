@@ -31,7 +31,7 @@ export function PreferenceForm({ onSubmit }: PreferenceFormProps) {
     charging: '',
     brand: '',
     performance: '',
-    priority: '',
+    priority: [],
   });
 
   const handleFeatureToggle = (feature: string) => {
@@ -40,6 +40,15 @@ export function PreferenceForm({ onSubmit }: PreferenceFormProps) {
       features: prev.features.includes(feature)
         ? prev.features.filter((f) => f !== feature)
         : [...prev.features, feature],
+    }));
+  };
+
+  const handlePriorityToggle = (priority: string) => {
+    setPreferences((prev) => ({
+      ...prev,
+      priority: prev.priority.includes(priority)
+        ? prev.priority.filter((p) => p !== priority)
+        : [...prev.priority, priority],
     }));
   };
 
@@ -58,13 +67,14 @@ export function PreferenceForm({ onSubmit }: PreferenceFormProps) {
       preferences.charging &&
       preferences.brand &&
       preferences.performance &&
-      preferences.priority
+      preferences.priority.length > 0
     );
   };
 
   const totalQuestions = 10;
   const answeredQuestions = Object.entries(preferences).filter(([key, value]) => {
     if (key === 'features') return true; // Features are optional
+    if (key === 'priority') return (value as string[]).length > 0;
     return value !== '';
   }).length;
 
@@ -233,17 +243,21 @@ export function PreferenceForm({ onSubmit }: PreferenceFormProps) {
 
         {/* Question 10: Priority */}
         <motion.div variants={fadeInUp} className="rounded-lg border bg-card p-6">
-          <h3 className="text-lg font-semibold mb-4">10. What matters most?</h3>
-          <RadioGroup value={preferences.priority} onValueChange={(value) => setPreferences({ ...preferences, priority: value })}>
-            <div className="space-y-3">
-              {['Range', 'Price', 'Features', 'Brand', 'Performance'].map((option) => (
-                <div key={option} className="flex items-center space-x-2">
-                  <RadioGroupItem value={option} id={`priority-${option}`} />
-                  <Label htmlFor={`priority-${option}`} className="cursor-pointer">{option}</Label>
-                </div>
-              ))}
-            </div>
-          </RadioGroup>
+          <h3 className="text-lg font-semibold mb-4">10. What matters most? (select multiple)</h3>
+          <div className="space-y-3">
+            {['Range', 'Price', 'Features', 'Brand', 'Performance'].map((option) => (
+              <div key={option} className="flex items-center space-x-2">
+                <input
+                  type="checkbox"
+                  id={`priority-${option}`}
+                  checked={preferences.priority.includes(option)}
+                  onChange={() => handlePriorityToggle(option)}
+                  className="h-4 w-4"
+                />
+                <Label htmlFor={`priority-${option}`} className="cursor-pointer">{option}</Label>
+              </div>
+            ))}
+          </div>
         </motion.div>
       </motion.div>
 

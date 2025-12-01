@@ -30,5 +30,5 @@ export interface UserPreferences {
   charging: string;
   brand: string;
   performance: string;
-  priority: string;
+  priority: string[];
 }
